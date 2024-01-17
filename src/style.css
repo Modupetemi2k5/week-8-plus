@@ -1,5 +1,8 @@
 body {
   background-color: #f9f7fe;
+  ffont-family: "Open Sans", sans-serif;
+  font-family: "PT Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -31,9 +34,30 @@ body {
 }
 
 .degree {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .parameters {
   display: flex;
+}
+
+.city-parameters {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+footer {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.weatherforecast-app {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.weatherapp-icon {
+  position: relative;
+  left: -30px;
 }

@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href=src/style.css>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -16,31 +20,24 @@
                 <input type="submit" value="search" class="submit-input" />
             </form>
         </header>
-        <h1>New York</h1>
-        <div class="parameters">
-            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png " class="icon" width="" />
-            <span class="temp">13</span>
-            <span class="degree">ºC</span></div>
+        <div class="city-parameters">
+            <h1>New York</h1>
+            <div class="parameters">
+                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png " class="icon" width="" />
+                <span class="temp">13</span>
+                <span class="degree">ºC</span></div>
+        </div>
         <p>
             Humidty:94% <br /> wind:2km/hr
         </p>
-        <div class="weatherforecast-app ">
-            <div class="row ">
-                <div class="col-2 ">
-                    <div class="weather-forecast-date ">Thu</div>
-                    <img src=" http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png " />
-                </div>
-                <div class="weatherforecast-app-temperature ">
-                    <span class="max-date ">18</span> <span class="min-date ">12</span>
-                </div>
-            </div>
-        </div>
+        <div class="weatherforecast-app " id="forecast"> </div>
         <footer>coded by
             <a href=" "> modupe</a> is
             <a href=" ">open-sourced onGitHub</a>and
             <a href=" "></a> hosted on Netlify</a>
         </footer>
     </div>
+    <script src="src/index.js"></script>
 </body>
 
 </html>
