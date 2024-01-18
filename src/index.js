@@ -5,8 +5,6 @@ function search(event) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = searchInputValue;
 }
-let inputForm = document.querySelector(".input-form");
-inputForm.addEventListener("submit", search);
 
 function displayForecast() {
   let forecast = document.querySelector("#forecast");
@@ -29,3 +27,24 @@ function displayForecast() {
   forecast.innerHTML = forecastHtml;
 }
 displayForecast();
+
+function formatDate() {
+  let now = new Date();
+  let days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+  let day = days[now.getDay()];
+  let minute = now.getMinutes();
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  if (minute < 0) {
+    minute = `0${minute}`;
+  }
+  currentDate = `${day}${hour}${minute}`;
+
+  let timeElement = document.querySelector("#time");
+  timeElement.innerHTML = currentDate;
+}
+formatDate();
+let inputForm = document.querySelector(".input-form");
+inputForm.addEventListener("submit", search);

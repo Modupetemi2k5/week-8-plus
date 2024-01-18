@@ -61,3 +61,11 @@ footer {
   position: relative;
   left: -30px;
 }
+
+.figures {
+  color: red;
+}
+
+.para-date {
+  opacity: 0.6;
+}
