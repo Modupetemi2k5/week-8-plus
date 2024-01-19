@@ -55,8 +55,6 @@ footer {
 .weatherforecast-app {
   margin-top: 40px;
   padding: 20px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .weatherapp-icon {
@@ -70,4 +68,9 @@ footer {
 
 .para-date {
   opacity: 0.6;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
 }
