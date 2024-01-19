@@ -7,22 +7,23 @@ function search(event) {
 }
 
 function displayForecast() {
-  let forecastHtml = "";
+  let forecast = document.querySelector("#forecast");
+  let forecastHtml = `<div class="row">`;
   let days = ["mon", "tue", "wed", "thu", "fri"];
 
   days.forEach(function (day) {
     forecastHtml =
       forecastHtml +
-      `
-            < div class = "col-2 " >
-            < div class = "weather-forecast-date " > ${day} < /div>
-             < img src = " http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png "
-        class = "weatherapp-icon"/>
-            < div class = "weatherforecast-app-temperature " >
-         '   < span class = "max-temp " > 18 < /span> <span class="min-temp ">12</span >
-            </div> </div>`;
+      `<div class="col-2">
+    <div class="weather-forecast-date">${day}</div>
+     <img src=" http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                class = "weatherapp-icon"/>
+                    <div class="weatherforecast-app-temperature">
+                    <span class="max-temp">18</span> <span class="min-temp">12</span>
+                    </div> </div>`;
   });
-  let forecast = document.querySelector("#forecast");
+  forecastHtml = forecastHtml + `</div>`;
+
   forecast.innerHTML = forecastHtml;
 }
 displayForecast();
@@ -34,12 +35,13 @@ function formatDate() {
   let minute = now.getMinutes();
   let hour = now.getHours();
   if (hour < 10) {
-    hour = `0${hour}`;
+    hour = `0 ${hour}
+    `;
   }
   if (minute < 0) {
     minute = `0${minute}`;
   }
-  currentDate = `${day}${hour}:${minute}`;
+  currentDate = `${day} ${hour}:${minute}`;
   let timeElement = document.querySelector("#time");
   timeElement.innerHTML = currentDate;
 }
