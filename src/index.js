@@ -13,7 +13,7 @@ function refreshWeather(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windSpeed.innerHTML = response.data.wind.speed;
-  tempElement.innerHTML = response.data.temperature.current;
+  tempElement.innerHTML = Math.round(response.data.temperature.current);
   iconElement.innerHTML = response.data.condition.icon_url;
   getForecast(response.data.city);
 }
@@ -22,13 +22,12 @@ function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector(".search-input");
   let searchInputValue = searchInput.value;
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = searchInputValue;
+  searchCity(searchInputValue);
 }
 
 function searchCity(city) {
   let apiKey = "03c85048t924o90fc221bd5189a06dda";
-  let apiUrl = `https://api.shecodes.io/weather/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(refreshWeather);
 }
 
@@ -47,15 +46,12 @@ function displayForecast(response) {
     if (index < 5) {
       forecastHtml =
         forecastHtml +
-        `<div class="col-2" >
-        <div class="weather-forecast-date" >${formatDay(day.time)}</div><
-        img src="${day.condition.icon_url}"
-    class ="weatherapp-icon"/>
+        `<div class="col-2">
+        <div class="weather-forecast-date" >${formatDay(day.time)}</div>
+        <img src="${day.condition.icon_url}"class ="weatherapp-icon"/>
         <div class="weatherforecast-app-temperature">
-        <span class="max-temp">${Math.round(day.temperature.maximum)} º < /span>
-         <span class="min-temp">${Math.round(
-           day.temperature.minimum
-         )} º < /span>
+        <span class="max-temp">${Math.round(day.temperature.maximum)}º</span>
+         <span class="min-temp">${Math.round(day.temperature.minimum)}º</span>
           </div></div>`;
     }
   });
