@@ -10,11 +10,12 @@ function refreshWeather(response) {
 
     cityElement.innerHTML = response.data.city;
     timeElement.innerHTML = currentDate;
-    descriptionElement.innerHTML = response.data.condition.description.icon;
+    descriptionElement.innerHTML = response.data.condition.description
     humidityElement.innerHTML = response.data.temperature.humidity;
     windSpeed.innerHTML = response.data.wind.speed;
     tempElement.innerHTML = response.data.temperature.current;
     iconElement.innerHTML = response.data.condition.icon_url;
+    getForecast(response.data.city);
 }
 
 function search(event) {
@@ -23,6 +24,7 @@ function search(event) {
     let searchInputValue = searchInput.value;
     let h1 = document.querySelector("h1");
     h1.innerHTML = searchInputValue;
+    searchCity(searchInputValue);
 }
 
 function searchCity(city) {
@@ -85,5 +87,3 @@ function formatDate() {
 formatDate();
 let inputForm = document.querySelector(".input-form");
 inputForm.addEventListener("submit", search);
-searchCity("lisbon");
-getForecast("lisbon");
