@@ -78,7 +78,7 @@ function formatDate() {
   if (hour < 10) {
     hour = `0 ${hour}`;
   }
-  if (minute < 0) {
+  if (minute < 10) {
     minute = `0${minute}`;
   }
   currentDate = `${day} ${hour}:${minute}`;
